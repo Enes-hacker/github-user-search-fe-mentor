@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root[color-mode="light"] {
+    --body-bg-color-: #f6f8ff;
+    --head-color-: #222731;
+    --darklight-color-: #697c9a;
+    --search-bg-color-: white;
+    --search-color-: #4b6a9b;
+    --black: black;
+    --follow-color-: #4b6a9b;
+    --followTotal-color-: #2b3442;
+    --social-color-: black;
+}
+
+:root[color-mode="dark"] {
+    --body-bg-color-: #141d2f;
+    --head-color-: #ffffff;
+    --darklight-color-: #ffffff;
+    --search-bg-color-: #1e2a47;
+    --search-color-: #ffffff;
+    --black: white;
+    --follow-bg-color-: #f6f8ff;
+    --follow-color-: white;
+    --followTotal-color-: #ffffff;
+    --social-color-: white;
+}
+
+:root {
+    --background-color-light: #ffffff;
+    --background-color-dark: #1e1e1e;
+    --text-color-light: #000000;
+    --text-color-dark: #ffffff;
+}
+
+[color-mode="light"] {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+[color-mode="dark"] {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.light--hidden {
+    display: none;
+}
+
+.dark--hidden {
+    display: none;
+}
+
+/* Display the dark mode button by default */
+[color-mode="light"] .color-mode__btn[aria-label="Toggle dark mode"] {
+    display: inline;
+}
+
+/* Hide the light mode button by default */
+[color-mode="light"] .color-mode__btn[aria-label="Toggle light mode"] {
+    display: none;
+}
+
+/* Display the light mode button by default */
+[color-mode="dark"] .color-mode__btn[aria-label="Toggle light mode"] {
+    display: inline;
+}
+
+/* Hide the dark mode button by default */
+[color-mode="dark"] .color-mode__btn[aria-label="Toggle dark mode"] {
+    display: none;
+}
+
+
+
+
+body {
+    background-color: var(--body-bg-color-);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-family: "Outfit", sans-serif;
+    font-family: "Red Hat Text", sans-serif;
+    font-family: "Space Mono", monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 730px;
+    margin-bottom: 25px;
+}
+
+.head {
+    font-weight: bold;
+    font-size: 26px;
+    color: var(--head-color-);
+}
+
+:root[color-mode="light"] .light--hidden {
+    display: none;
+}
+
+:root[color-mode="dark"] .dark--hidden {
+    display: none;
+}
+
+.color-mode__btn {
+    outline: none;
+    font-size: 13px;
+    background-color: var(--body-bg-color-);
+    border: none;
+    cursor: pointer;
+    color: var(--darklight-color-);
+    display: flex;
+    align-items: center;
+    width: 78px;
+    justify-content: space-between;
+}
+
+.dark img,
+.light img {
+    width: 20px;
+    height: 20px;
+}
+
+.search {
+    width: 730px;
+    height: 69px;
+    background-color: var(--search-bg-color-);
+    color: var(--search-color-);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black;*/
+}
+
+.searchText {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.searchText img {
+    margin-left: 35px;
+}
+
+.searchText input {
+    margin-left: 20px;
+    height: 100%;
+    width: 500px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: var(--search-color-);
+    background-color: var(--search-bg-color-);
+}
+
+::placeholder {
+    color: var(--search-color-);
+    opacity: 1;
+}
+
+.searchbtn {
+    width: 106px;
+    height: 50px;
+    background-color: #0079FF;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.resultBody {
+    width: 730px;
+    height: 419px;
+    background-color: var(--search-bg-color-);
+    border-radius: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultBody .mainImg {
+    width: 117px;
+    height: 117px;
+    border: 1px solid black;
+    border-radius: 117
+}
+
+.resultBody .mainImg {
+    width: 117px;
+    height: 117px;
+    border: 1px solid black;
+    border-radius: 117px;
+    object-fit: contain;
+}
+
+.resultBody .mainImg img {
+    object-fit: contain;
+    width: 117px;
+    height: 117px;
+    border-radius: 117px;
+}
+
+.githubHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 650px;
+    margin-top: 30px;
+}
+
+.githubInfo {
+    height: 100%;
+    width: 480px;
+    position: relative;
+}
+
+.githubUser {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--followTotal-color-);
+}
+
+.githubJoinedDate {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    font-size: 15px;
+    color: #697C9A;
+}
+
+.githUserName {
+    margin-top: 5px;
+}
+
+.githUserName a {
+    color: #0079FF;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.githubFact {
+    width: 650px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.githubBio {
+    width: 480px;
+    height: 25px;
+    color: var(--search-color-);
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.githubRepo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--body-bg-color-);
+    height: 85px;
+    width: 480px;
+    border-radius: 10px;
+}
+
+.reposHeading,
+.followerHeading,
+.followingHeading {
+    font-size: 13px;
+    color: var(--followTotal-color-);
+    font-weight: bold;
+}
+
+.repoTotal,
+.followerTotal,
+.followingTotal {
+    font-size: 22px;
+    color: var(--followTotal-color-);
+    font-weight: bold;
+}
+
+.githubSocial {
+    display: grid;
+    grid-template-columns: 240px 240px;
+    row-gap: 1.2em;
+    color: var(--social-color-);
+    margin-top: 30px;
+}
+
+.location,
+.twitter,
+.website,
+.company {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.location img,
+.twitter img,
+.website img,
+.company img {
+    margin-right: 10px;
+}
+
+@media (min-width: 461px) and (max-width: 769px) {
+    header,
+    .search {
+        width: 574px;
+    }
+
+    .searchText input {
+        width: 400px;
+    }
+
+    .resultBody {
+        width: 573px;
+        height: 481px;
+    }
+
+    .githubHead,
+    .githubRepo,
+    .githubSocial {
+        width: 493px;
+    }
+
+    .githubInfo {
+        width: 350px;
+    }
+
+    .githubJoinedDate {
+        top: 70px;
+        left: 0;
+    }
+
+    .githubFact {
+        width: 493px;
+        align-items: flex-start;
+    }
+
+    .githubFact {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    header,
+    .search {
+        width: 327px;
+        margin-left: 10px;
+        height: 60px;
+    }
+
+    .searchText img {
+        margin-left: 15px;
+    }
+
+    .searchText input {
+        width: 160px;
+        font-size: 12px;
+    }
+
+    .searchbtn {
+        width: 84px;
+        height: 46px;
+        font-size: 12px;
+    }
+
+    .resultBody {
+        width: 327px;
+    }
+
+    .githubFact,
+    .githubHead {
+        width: 279px;
+    }
+
+    .resultBody .mainImg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .resultBody .mainImg img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .githubInfo {
+        width: 200px;
+    }
+
+    .githubUser {
+        font-size: 18px;
+    }
+
+    .githUserName {
+        margin-top: -5px;
+    }
+
+    .githubJoinedDate {
+        top: 48px;
+    }
+
+    .githUserName a,
+    .githubJoinedDate,
+    .githubInfo {
+        font-size: 12px;
+    }
+
+    .githubBio {
+        margin-top: 25px;
+    }
+
+    .githubRepo {
+        width: 279px;
+    }
+
+    .githubSocial {
+        grid-template-columns: 279px;
+    }
+
+    .repoTotal,
+    .followerTotal,
+    .followingTotal {
+        text-align: center;
+    }
+}
